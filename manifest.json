@@ -1,0 +1,58 @@
+{
+  "name": "Classroom",
+  "description": "Lightspeed Systems - Classroom Management (Thursday, December 8, 2022, 4:52:27 AM)",
+  "version": "3.1.8.1670475147",
+  "options_page": "options.html",
+  "icons": {
+    "16": "assets/icon-classroom-16.png",
+    "48": "assets/icon-classroom-48.png",
+    "128": "assets/icon-classroom-128.png"
+  },
+  "background": {
+    "scripts": [
+      "index.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "menu.html",
+    "default_title": "Classroom Status",
+    "default_icon": {
+      "16": "assets/browseraction-working.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "cs.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "*.png",
+    "cs.js",
+    "console.html"
+  ],
+  "permissions": [
+    "background",
+    "bookmarks",
+    "desktopCapture",
+    "storage",
+    "identity",
+    "identity.email",
+    "tabCapture",
+    "activeTab",
+    "tabs",
+    "http://*/",
+    "https://*/",
+    "<all_urls>",
+    "idle",
+    "notifications",
+    "webRequest"
+  ],
+  "manifest_version": 2,
+  "update_url": "https://lsrelay-extensions-production.s3.amazonaws.com/classroom/06318242f0389dc531690213d0264c48e82a9faff1b6f46a71311a7795e3c4a8/Classroom.xml"
+}
